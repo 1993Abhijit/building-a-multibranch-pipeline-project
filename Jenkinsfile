@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:18'  // Uses official Node.js image
+        }
+    }
     environment {
         CI = 'true'
     }
@@ -36,5 +40,6 @@ pipeline {
         }
     }
 }
+
 
 
